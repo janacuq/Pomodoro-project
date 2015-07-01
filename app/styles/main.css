@@ -1,0 +1,36 @@
+html {
+    background-color: rgba(228, 19, 16, 0.7);
+    font-family: 'Open Sans', sans-serif;
+}
+.main {
+    font-size: 2rem;
+    color: gainsboro;
+    text-align: center;
+    
+}
+.button {
+    background-color: rgba(228, 19, 16);
+    width: 200px;
+    height: 70px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2rem;
+    padding-top: 10px;
+    color: white;
+    text-align: center;
+    vertical-align:bottom;
+    border: solid 2px white;
+    
+   
+}
+
+.container {
+    margin-bottom: 0px;
+    }
+
+#timer {
+    font-size: 8rem;
+    color: gainsboro;
+    text-align: center;
+}
