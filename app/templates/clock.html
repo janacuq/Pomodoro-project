@@ -1,13 +1,27 @@
-<div class="current">
-Work Session
-</div>
 
 <div class="container">
-    <p id="timer">{{time}}</p>
+    <p id="timer" ng-show="!onBreak">{{time | timeCode}}</p>
+    <p id="timer" ng-show="onBreak">{{timeBreak | timeCode}}</p>
 </div>
-<div class="button" ng-click="start()" ng-if="!running">
+<div class="button" ng-click="start()" ng-if="!runningWork" ng-hide="onBreak">
 Start 
 </div>
-<div class="button" ng-click="reset()" ng-if="running">
+<div class="button" ng-click="stop()" ng-if="runningWork" >
+Pause 
+</div>
+</br>
+<div class="button" ng-click="reset()" ng-show="runningWork">
 Reset 
 </div>
+<div class="button" ng-click="startBreak()" ng-show="onBreak" ng-if="!runningBreak">
+Start Break!
+</div>
+<div class="button" ng-click="stopBreak()" ng-if="runningBreak">
+Pause Break
+</div>
+</br>
+<div class="button" ng-click="resetBreak()" ng-show="runningBreak">
+Reset Break
+</div>
+
+
