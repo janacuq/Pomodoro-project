@@ -1,6 +1,13 @@
+<div class="current">
+Work Session
+</div>
+
 <div class="container">
     <p id="timer">{{time}}</p>
 </div>
-<div class="button" ng-click="start()">
-START   
+<div class="button" ng-click="start()" ng-if="!running">
+Start 
+</div>
+<div class="button" ng-click="reset()" ng-if="running">
+Reset 
 </div>

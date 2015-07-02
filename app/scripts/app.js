@@ -23,26 +23,44 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
 }]);
 
 
-app.controller("MainController", function($scope, $firebaseObject) {
+app.controller("MainController",['$scope', '$interval', '$firebaseObject', function($scope, $interval, $firebaseObject) {
     var ref = new Firebase("https://amber-inferno-5080.firebaseio.com");
     
   //  $scope.data = $firebaseObject(ref);
     
     // syncObject.$bindTo($scope, "data");
     
-    $scope.time = '25:00';
+    $scope.time = '50';
+    $scope.running = false;
+    $scope.buttonName = 'START';
     
- 
+    if ($scope.running === true) {
+        $scope.buttonName = 'Reset';
+    } else {
+        $scope.buttonName = 'Start'
+    }
+    
      
     $scope.start = function() {
-        $scope.time=50;
-        if($scope.time === 0) {
-           return  $scope.time = 'Break?';
-        } else {
-            $scope.time -=1;
-            setTimeout("start()", 1000);
-        }
+        setInterval(function() {
+         $scope.time -=1;
+         $scope.$apply();
+        }, 1000);
     };
     
 
-});
+}]);
+
+/*
+app.directive('myTime', ['$interval', 'dateFilter', function($interval, dateFilter) {
+    return function (scope, element, attrs) {
+        var format,
+            stopTime;
+        
+        function updateTime() {
+            element.text
+
+
+
+    };
+    });*/

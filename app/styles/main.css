@@ -25,6 +25,14 @@ html {
    
 }
 
+
+.current {
+    font-size: 5rem;
+    opacity: 0.5;
+    color: white;
+    text-align: center;
+}
+
 .container {
     margin-bottom: 0px;
     }
