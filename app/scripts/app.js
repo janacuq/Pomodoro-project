@@ -2,7 +2,7 @@ var app = angular.module("Pomodoro", ["ui.router", "firebase"]);
 
 
 app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
-    $urlRouterProvider.otherwise('/home');
+    $urlRouterProvider.otherwise('/clock');
 
     $locationProvider.html5Mode({
         enabled: true,
@@ -29,20 +29,30 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
     //  $scope.data = $firebaseObject(ref);
 
     // syncObject.$bindTo($scope, "data");
-
-    $scope.time = '1500';
-    $scope.timeBreak = '300';
-
+    
+   
+    
+    $scope.time = '3';
+    $scope.timeBreak = '6';
+    $scope.timeLongBreak = '1800'
+    $scope.counter = 0;
     $scope.runningWork = false;
     $scope.onBreak = false;
-    $scope.pausedBreak = false;
+    $scope.onLongBreak = false;
 
     $scope.start = function () {
+        
         var promise = $interval(function () {
             if ($scope.time === 0) {
                 $scope.runningWork = false;
+                $scope.counter += 1;
+                console.log($scope.counter);
+                if($scope.counter%4 === 0){
+                    $scope.onLongBreak = true;
+                } else {
                 $scope.onBreak = true;
                 $interval.cancel(promise);
+                }
             } else {
                 $scope.time -= 1;
                 $scope.runningWork = true;
@@ -64,10 +74,10 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
     $scope.startBreak = function () {
         var promise2 = $interval(function () {
             if ($scope.timeBreak === 0) {
-                $scope.runningBreak = false;
-
-                return $scope.time = '1500';
+                $scope.onBreak = false;
+                $scope.time = '3';
                 $interval.cancel(promise2);
+                $scope.runningBreak = false;
 
             } else {
                 $scope.timeBreak -= 1;
@@ -89,6 +99,8 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
 
     };
     };
+    
+    
 
 }]);
 

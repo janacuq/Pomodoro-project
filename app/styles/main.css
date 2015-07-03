@@ -1,16 +1,55 @@
 html {
-    background-color: rgba(228, 19, 16, 0.7);
+    background-color: rgba(220, 215, 198, 1);
     font-family: 'Roboto', sans-serif;
 }
-.main {
+
+.nuevo {
+    color: white;
+    text-align: center;
+    border: solid 3px white;
+
+    }
+
+.logo {
+    display: block;
+    width:160px;
+    margin-top: 3rem; 
+    margin-left: 510px;
+  
+}
+
+.form {
+    position: relative;
+        text-align: center;
+
+    margin-top: 2rem;
+}
+
+input {
+    font-family: 'Roboto', sans-serif;
+    width: 20rem;
+    height: 3rem;
     font-size: 2rem;
-    color: gainsboro;
     text-align: center;
 }
-.button {
-    background-color: rgba(228, 19, 16);
-    width: 200px;
-    height: 70px;
+
+.timer {
+    position:relative;
+    font-size: 8rem;
+    color: white;
+    text-align: center;
+    margin-top: -90px;
+}
+.butt {
+    position: relative;
+    margin-top: -100px;
+}
+
+
+.buttons {
+    background-color: rgba(149, 174, 141, 1);
+    width: 250px;
+    height: 50px;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -19,23 +58,37 @@ html {
     color: white;
     text-align: center;
     vertical-align: bottom;
-    border: solid 2px white;
+    border: solid 5px white;
 }
-.button:hover {
-    background-color: rgba(136, 175, 145, 1);
-}
-.current {
-    font-size: 3rem;
-    opacity: 0.5;
+
+
+
+.button-reset {
+    width: 150px;
+    height: 50px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1rem;
     color: white;
     text-align: center;
-    z-index: -1;
+    vertical-align: bottom;
 }
-.container {
-    margin-bottom: 0px;
+
+.buttons:hover {
+    background-color: rgba(216, 109, 64, 1);
 }
-#timer {
-    font-size: 8rem;
-    color: gainsboro;
-    text-align: center;
+
+
+footer {
+  background-color: rgba(149, 174, 141, 1);
+  position: bottom;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 0.6rem;
+  text-align: center;
+  color:white;
+  font-size: 1.3rem;
+  margin-top: 6rem;
 }

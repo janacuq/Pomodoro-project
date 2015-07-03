@@ -1,27 +1,45 @@
-
 <div class="container">
-    <p id="timer" ng-show="!onBreak">{{time | timeCode}}</p>
-    <p id="timer" ng-show="onBreak">{{timeBreak | timeCode}}</p>
-</div>
-<div class="button" ng-click="start()" ng-if="!runningWork" ng-hide="onBreak">
-Start 
-</div>
-<div class="button" ng-click="stop()" ng-if="runningWork" >
-Pause 
-</div>
-</br>
-<div class="button" ng-click="reset()" ng-show="runningWork">
-Reset 
-</div>
-<div class="button" ng-click="startBreak()" ng-show="onBreak" ng-if="!runningBreak">
-Start Break!
-</div>
-<div class="button" ng-click="stopBreak()" ng-if="runningBreak">
-Pause Break
-</div>
-</br>
-<div class="button" ng-click="resetBreak()" ng-show="runningBreak">
-Reset Break
-</div>
 
+    <div class="contain-logo"><img class="logo" src="/app/images/tomato4_logo.png" /></div>
 
+    <div class="form">
+
+        <label>
+            <input type="text" ng-model="name" placeholder="my first task">
+        </label>
+
+    </div>
+    <div class="timer">
+        <p ng-show="!onBreak">{{time | timeCode}}</p>
+        <p ng-show="onBreak">{{timeBreak | timeCode}}</p>
+    </div>
+
+    <div class="butt">
+        <div class="buttons" ng-click="start()" ng-if="!runningWork" ng-hide="onBreak">
+            Start
+        </div>
+        <div class="buttons" ng-click="stop()" ng-if="runningWork">
+            Pause
+        </div>
+        </br>
+        <div class="button-reset" ng-click="reset()" ng-show="runningWork">
+            RESET
+        </div>
+        <div class="buttons" ng-click="startBreak()" ng-show="onBreak" ng-if="!runningBreak">
+            Start Break!
+        </div>
+        <div class="buttons" ng-click="stopBreak()" ng-if="runningBreak">
+            Pause Break
+        </div>
+        </br>
+        <div class="button-reset" ng-click="resetBreak()" ng-show="runningBreak">
+            RESET BREAK
+        </div>
+    </div>
+
+</div>
+<footer>
+   <span ng-show="!onBreak && !runningWork">Ready?</span> 
+    <span ng-show="runningWork">Sssshhhhh...Working Progress</span> 
+    <span ng-show="onBreak">Time for a break!</span> 
+</footer>
