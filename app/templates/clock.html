@@ -5,7 +5,7 @@
     <div class="form">
 
         <label>
-            <input type="text" ng-model="name" placeholder="my first task">
+            <input type="text" ng-model="task" placeholder="my first task"/>
         </label>
 
     </div>
@@ -16,20 +16,20 @@
 
     <div class="butt">
         <div class="buttons" ng-click="start()" ng-show="Work" ng-if="!runningWork" >
-            Start
+            start
         </div>
         <div class="buttons" ng-click="stop()" ng-if="runningWork">
-            Pause
+            pause
         </div>
         </br>
         <div class="button-reset" ng-click="reset()" ng-show="Work">
             RESET
         </div>
         <div class="buttons" ng-click="startBreak()" ng-hide="Work" ng-if="!runningBreak">
-            Start Break!
+            start break
         </div>
         <div class="buttons" ng-click="stopBreak()" ng-if="runningBreak">
-            Pause Break
+            pause break
         </div>
         </br>
         <div class="button-reset" ng-click="resetBreak()" ng-hide="Work">

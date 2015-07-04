@@ -1,5 +1,5 @@
 html {
-    background-color: rgba(220, 215, 198, 1);
+    background-color: rgba(227, 222, 210, 1);
     font-family: 'Roboto', sans-serif;
 }
 
@@ -7,30 +7,43 @@ html {
     color: white;
     text-align: center;
     border: solid 3px white;
-
     }
 
 .logo {
     display: block;
+    margin: 0 auto;
     width:160px;
     margin-top: 3rem; 
-    margin-left: 510px;
-  
 }
 
 .form {
     position: relative;
-        text-align: center;
-
+    text-align: center;
     margin-top: 2rem;
 }
 
+input[type='text'] {
+    background-image: url(/app/images/pencilss.png);
+    background-repeat:no-repeat;
+    background-position: 7px 4px;
+    background-size: 25px;
+ 
+}
+
+input[type='text']::-webkit-input-placeholder{
+       color: rgba(227, 222, 210, 1);
+}
+
+
 input {
     font-family: 'Roboto', sans-serif;
-    width: 20rem;
-    height: 3rem;
+    width: 300px;
+    height: px;
     font-size: 2rem;
     text-align: center;
+    border: none;
+    outline: none;
+    color: rgba(136, 175, 145, 1);
 }
 
 .timer {
@@ -47,18 +60,18 @@ input {
 
 
 .buttons {
-    background-color: rgba(149, 174, 141, 1);
-    width: 250px;
+    background-color: rgba(136, 175, 145, 1);
+    width: 300px;
     height: 50px;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
     font-size: 2rem;
-    padding-top: 10px;
+    letter-spacing: 2.5px;
     color: white;
     text-align: center;
-    vertical-align: bottom;
-    border: solid 5px white;
+    padding-top: 9px;
+    border: solid 4px white;
 }
 
 
@@ -76,12 +89,12 @@ input {
 }
 
 .buttons:hover {
-    background-color: rgba(216, 109, 64, 1);
+    box-shadow: 7px 7px 0px rgba(255,255,255,0.3);
 }
 
 
 footer {
-  background-color: rgba(149, 174, 141, 1);
+  background-color: rgba(136, 175, 145, 1);
   position: absolute;
   height: 20px;
   bottom: 0;
