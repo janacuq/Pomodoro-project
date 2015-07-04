@@ -34,28 +34,37 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
     
     $scope.time = '3';
     $scope.timeBreak = '6';
-    $scope.timeLongBreak = '1800'
+    $scope.footerMessage = 'Ready?';
+   
     $scope.counter = 0;
-    $scope.runningWork = false;
-    $scope.onBreak = false;
-    $scope.onLongBreak = false;
+    
+    $scope.Work = true;
 
     $scope.start = function () {
         
         var promise = $interval(function () {
             if ($scope.time === 0) {
+                $scope.mySound.play();
                 $scope.runningWork = false;
                 $scope.counter += 1;
                 console.log($scope.counter);
                 if($scope.counter%4 === 0){
-                    $scope.onLongBreak = true;
+                    $scope.Work = false;
+                    $scope.timeBreak = '8';
+                       console.log('long Break');
+                    $scope.footerMessage = 'You deserve a long break!';
+                $interval.cancel(promise);
                 } else {
-                $scope.onBreak = true;
+             $scope.timeBreak = '6';
+                    $scope.footerMessage = 'Time for a break';
+                $scope.Work = false;
+                    console.log('finishWork');
                 $interval.cancel(promise);
                 }
             } else {
                 $scope.time -= 1;
                 $scope.runningWork = true;
+                $scope.footerMessage = 'Sssshhh...Work in Progress';
             }
         }, 1000)
 
@@ -74,14 +83,18 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
     $scope.startBreak = function () {
         var promise2 = $interval(function () {
             if ($scope.timeBreak === 0) {
-                $scope.onBreak = false;
+                $scope.mySound.play();
                 $scope.time = '3';
                 $interval.cancel(promise2);
+                console.log('finishBreak');
+                $scope.Work = true;
                 $scope.runningBreak = false;
+                $scope.footerMessage = 'Time to work!';
 
             } else {
                 $scope.timeBreak -= 1;
                 $scope.runningBreak = true;
+                $scope.footerMessage = 'Enjoy your break';
             }
         }, 1000)
         
@@ -100,7 +113,9 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
     };
     };
     
-    
+    $scope.mySound = new buzz.sound("/app/sounds/40725^DING1.mp3", {
+        preload: true
+    });
 
 }]);
 
