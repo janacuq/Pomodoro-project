@@ -15,24 +15,24 @@
     </div>
 
     <div class="butt">
-        <div class="buttons" ng-click="start()" ng-show="Work" ng-if="!runningWork" >
+        <div class="buttons" ng-click="start()" ng-if="Work && !runningWork" >
             start
         </div>
-        <div class="buttons" ng-click="stop()" ng-if="runningWork">
+        <div class="buttons" ng-click="stop()" ng-if="Work && runningWork" style="background-color: rgba(238, 124, 87, 1)">
             pause
         </div>
         </br>
-        <div class="button-reset" ng-click="reset()" ng-show="Work">
+        <div class="button-reset" ng-click="reset()" ng-if="Work">
             RESET
         </div>
-        <div class="buttons" ng-click="startBreak()" ng-hide="Work" ng-if="!runningBreak">
+        <div class="buttons" ng-click="startBreak()"  ng-if="!Work && !runningBreak">
             start break
         </div>
-        <div class="buttons" ng-click="stopBreak()" ng-if="runningBreak">
+        <div class="buttons" ng-click="stopBreak()" ng-if="!Work && runningBreak" style="background-color: rgba(238, 124, 87, 1)">
             pause break
         </div>
         </br>
-        <div class="button-reset" ng-click="resetBreak()" ng-hide="Work">
+        <div class="button-reset" ng-click="resetBreak()" ng-if="!Work">
             RESET BREAK
         </div>
     </div>
