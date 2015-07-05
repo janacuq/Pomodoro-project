@@ -23,43 +23,39 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
 }]);
 
 
-app.controller("MainController", ['$scope', '$interval', '$firebaseObject', function ($scope, $interval, $firebaseObject) {
-    var ref = new Firebase("https://amber-inferno-5080.firebaseio.com");
+app.controller("MainController", ['$scope', '$interval', '$firebase', function ($scope, $interval, $firebaseArray) {
 
-    //  $scope.data = $firebaseObject(ref);
 
-    // syncObject.$bindTo($scope, "data");
-    
-   
-    
+
+
     $scope.time = '3';
     $scope.timeBreak = '6';
     $scope.footerMessage = 'Ready?';
-   
+
     $scope.counter = 0;
-    
+
     $scope.Work = true;
 
     $scope.start = function () {
-        
+
         var promise = $interval(function () {
             if ($scope.time === 0) {
                 $scope.mySound.play();
                 $scope.runningWork = false;
                 $scope.counter += 1;
                 console.log($scope.counter);
-                if($scope.counter%4 === 0){
+                if ($scope.counter % 4 === 0) {
                     $scope.Work = false;
                     $scope.timeBreak = '8';
-                       console.log('long Break');
+                    console.log('long Break');
                     $scope.footerMessage = 'You deserve a long break!';
-                $interval.cancel(promise);
+                    $interval.cancel(promise);
                 } else {
-             $scope.timeBreak = '6';
+                    $scope.timeBreak = '6';
                     $scope.footerMessage = 'Time for a break';
-                $scope.Work = false;
+                    $scope.Work = false;
                     console.log('finishWork');
-                $interval.cancel(promise);
+                    $interval.cancel(promise);
                 }
             } else {
                 $scope.time -= 1;
@@ -97,25 +93,27 @@ app.controller("MainController", ['$scope', '$interval', '$firebaseObject', func
                 $scope.footerMessage = 'Enjoy your break';
             }
         }, 1000)
-        
+
         $scope.stopBreak = function () {
             $interval.cancel(promise2);
             $scope.runningBreak = false;
 
-            
+
         };
 
-         $scope.resetBreak = function () {
-        $scope.timeBreak = '300';
-        $scope.stopBreak();
-        $scope.runningBreak = false;
+        $scope.resetBreak = function () {
+            $scope.timeBreak = '300';
+            $scope.stopBreak();
+            $scope.runningBreak = false;
 
+        };
     };
-    };
-    
+
     $scope.mySound = new buzz.sound("/app/sounds/40725^DING1.mp3", {
         preload: true
     });
+
+
 
 }]);
 
@@ -137,4 +135,24 @@ app.filter('timeCode', function () {
         hr = (hr) ? ':' + hr : '';
         return hr + min + ':' + sec;
     }
+});
+
+
+app.controller('HistoryCtrl', function ($scope, $firebaseArray) {
+
+    var ref = new Firebase("https://amber-inferno-5080.firebaseio.com/");
+
+    $scope.tasks = $firebaseArray(ref);
+
+    $scope.newTask = '';
+
+    $scope.addMessages = function () {
+
+        $scope.tasks.$add({
+            text: $scope.newTask,
+            created_at: Firebase.ServerValue.TIMESTAMP,
+        });
+
+    };
+
 });

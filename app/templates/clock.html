@@ -1,21 +1,33 @@
 <div class="container">
+    <div class="menu" ng-controller="HistoryCtrl">
+        <div>My tasks
+            <div class="form">
+                <form ng-submit="addMessages()">
+                    <label>
+                        <input type="text" ng-model="newTask" placeholder="my first task" />
+                        <button>Submit</button>
+                    </label>
+                </form>
+            </div>
+        </div>
+        <div class="cards" ng-repeat="task in tasks | orderBy: '-created_at'">
+            <p class="card-name">{{task.text}}</p><span>{{counter}}</span>
+            <p class="card-name">{{task.created_at | date:'short'}}</p>
+
+
+        </div>
+    </div>
 
     <div class="contain-logo"><img class="logo" src="/app/images/tomato4_logo.png" /></div>
 
-    <div class="form">
 
-        <label>
-            <input type="text" ng-model="task" placeholder="my first task"/>
-        </label>
-
-    </div>
     <div class="timer">
         <p ng-show="Work">{{time | timeCode}}</p>
         <p ng-hide="Work">{{timeBreak | timeCode}}</p>
     </div>
 
     <div class="butt">
-        <div class="buttons" ng-click="start()" ng-if="Work && !runningWork" >
+        <div class="buttons" ng-click="start()" ng-if="Work && !runningWork">
             start
         </div>
         <div class="buttons" ng-click="stop()" ng-if="Work && runningWork" style="background-color: rgba(238, 124, 87, 1)">
@@ -25,7 +37,7 @@
         <div class="button-reset" ng-click="reset()" ng-if="Work">
             RESET
         </div>
-        <div class="buttons" ng-click="startBreak()"  ng-if="!Work && !runningBreak">
+        <div class="buttons" ng-click="startBreak()" ng-if="!Work && !runningBreak">
             start break
         </div>
         <div class="buttons" ng-click="stopBreak()" ng-if="!Work && runningBreak" style="background-color: rgba(238, 124, 87, 1)">
@@ -39,6 +51,6 @@
 
 </div>
 <footer>
-   <span>{{footerMessage}}</span> 
-   
+    <span>{{footerMessage}}</span>
+
 </footer>
