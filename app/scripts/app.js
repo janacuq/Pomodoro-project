@@ -155,4 +155,9 @@ app.controller('HistoryCtrl', function ($scope, $firebaseArray) {
 
     };
 
+    $scope.delete = function (task) {
+        console.log(task);
+        $scope.tasks.$remove(task);
+    
+    };
 });

@@ -1,18 +1,21 @@
 <div class="container">
+    
     <div class="menu" ng-controller="HistoryCtrl">
-        <div>My tasks
+        <div>My tasks 
             <div class="form">
                 <form ng-submit="addMessages()">
                     <label>
                         <input type="text" ng-model="newTask" placeholder="my first task" />
-                        <button>Submit</button>
+                        <button id="button-submit">Save</button>
                     </label>
                 </form>
             </div>
         </div>
         <div class="cards" ng-repeat="task in tasks | orderBy: '-created_at'">
-            <p class="card-name">{{task.text}}</p><span>{{counter}}</span>
-            <p class="card-name">{{task.created_at | date:'short'}}</p>
+            <div class="card-time">{{task.created_at | date:'MMM d, y H:mm'}}</div><div class="card-counter">{{counter}}</div>
+            <div class="card-name">{{task.text}}</div>
+            <div class="card-delete" ng-click=delete(task)>delete</div>
+          
 
 
         </div>

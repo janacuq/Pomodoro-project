@@ -4,7 +4,7 @@
     position: absolute;
     z-index: 2;
     top: 0;
-    width: 300px;
+    width: 380px;
     height: 100%;
     background-color: white;
     color: rgba(227, 222, 210, 1);
@@ -44,6 +44,7 @@ html {
     margin-top: 2rem;
 }
 
+
 input[type='text'] {
     background-image: url(/app/images/pencilss.png);
     background-repeat:no-repeat;
@@ -59,7 +60,7 @@ input[type='text']::-webkit-input-placeholder{
 
 input {
     font-family: 'Roboto', sans-serif;
-    width: 300px;
+    width: 250px;
     height: px;
     font-size: 2rem;
     text-align: center;
@@ -115,6 +116,17 @@ input {
     box-shadow: 7px 7px 0px rgba(255,255,255,0.5);
 }
 
+#button-submit {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.7rem;
+    border: solid 1px rgba(136, 175, 145, 1);
+    background-color: white;
+    color: rgba(136, 175, 145, 1);
+    vertical-align: middle;
+
+
+}
+
 
 footer {
   background-color: rgba(136, 175, 145, 1);
@@ -128,4 +140,43 @@ footer {
   color:white;
   font-size: 1.3rem;
   
+}
+
+.cards {
+    display: inline-block;
+    height: 100px;
+    width: 300px;
+    border: solid 1px rgba(227, 222, 210,0.8);
+    box-shadow: 5px 5px 0px rgba(227, 222, 210,0.8);
+    margin: 10px;
+    font-size: 1rem;
+    color: rgba(136, 175, 145, 1);
+   
+}
+
+.card-time {
+    float: left;
+    margin: 10px;
+
+}
+
+.card-name {
+    margin-top: 50px;
+    font-size: 1.5rem;
+    text-align: left;
+    margin-left: 10px;
+}
+
+.card-counter {
+    float: right;
+    margin: 10px;
+    font-size: 1.5rem;
+}
+
+.card-delete {
+    cursor: pointer;
+    float:right;
+    font-size: 0.8rem;
+    margin: 5px;
+    color: rgba(216, 109, 64, 1);
 }
