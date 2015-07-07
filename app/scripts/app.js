@@ -1,4 +1,4 @@
-var app = angular.module("Pomodoro", ["ui.router", "firebase"]);
+var app = angular.module("Pomodoro", ["ui.router", "firebase", "ngAnimate"]);
 
 
 app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', function ($stateProvider, $locationProvider, $urlRouterProvider) {
@@ -114,14 +114,15 @@ app.controller("MainController", ['$scope', '$interval', '$firebase', function (
     });
 
     $scope.showmenu = false;
-    $scope.buttonTasks = 'My tasks';
+    
+    
     $scope.toogle = function() {
         if($scope.showmenu){
         $scope.showmenu = false;
-            $scope.buttonTasks = 'My tasks';
+         
         } else {
             $scope.showmenu = true;
-            $scope.buttonTasks = 'Close';
+         
          
         }
     };

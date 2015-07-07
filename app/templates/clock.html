@@ -4,7 +4,7 @@
     
     <div class="menu" ng-show="showmenu" ng-controller="HistoryCtrl">
         <div>
-            <div style="color:rgba(216, 109, 64, 1)" ng-click="toogle()">Close</div>
+            <div style="color:rgba(216, 109, 64, 1);font-size:1rem;" ng-click="toogle()">Close</div>
             <span style="color:rgba(216, 109, 64, 1)">History </span>
             <div class="form">
                 <form ng-submit="addMessages()">
@@ -32,7 +32,7 @@
     <div class="hero">
         
         <div class="hero-head">
-        <div ng-click="toogle()">Record my Tasks</div>
+        <div ng-click="toogle()" ng-hide="showmenu">Record my Tasks</div>
          <div class="signup">Sign Up</div>   
         </div>
     <div class="contain-logo"><img class="logo" src="/app/images/tomato4_logo.png" /></div>
@@ -67,7 +67,9 @@
     </div>
 </div>
 </div>
-<footer>
+
+ <footer>
     <span>{{footerMessage}}</span>
 
 </footer>
+

@@ -81,8 +81,8 @@ html {
 /*menu left*/
 
 .menu {
-  
-    width: 30%;
+
+    width: 40%;
     margin-top: 0px;
     background-color: white;
     color: rgba(227, 222, 210, 1);
@@ -91,9 +91,27 @@ html {
     padding-top: 10px;
     display: flex;
     flex-direction: column;
-   height: 700px;
+    z-index: 1;
     overflow: auto;
+    transform: translate(0px, 0px);
+    scale: 1;
 }
+
+.menu.ng-hide-add.ng-hide-add-active,
+.menu.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.menu.ng-hide {
+  transform: translate(-50px, 0px);
+
+    scale: 0.5;ß
+}
+
+
+
+
 
 input[type='text'] {
     background-image: url(/app/images/pencilss.png);
@@ -126,6 +144,23 @@ input {
     cursor: pointer;
 }
 
+.cards.ng-enter {
+	-webkit-transition: 0.5s linear all; /* Chrome */
+	transition: 0.5s linear all;
+	opacity: 0;
+}
+ 
+.cards.ng-enter-active{
+	opacity: 1;
+}
+.cards.ng-leave{
+    	-webkit-transition: 0.5s linear all; /* Chrome */
+	transition: 0.5s linear all;
+	opacity: 1;
+}
+.cards.ng-leave-active{
+	opacity: 0;
+}
 
 
 .cards {
@@ -140,6 +175,7 @@ input {
     color: rgba(136, 175, 145, 1);
     text-align: left;
     overflow: hidden;
+    opacity: 1;
 }
 .top {
     display: flex;
@@ -171,13 +207,25 @@ footer {
     color: white;
     font-size: 1rem;
 }
+
+
+@media screen and (max-width: 769px) {
+    .menu {width:100%;}
+    #container{flex-direction: column-reverse;}
+}
+/*
+@media screen and (min-width: 769px) {
+    .menu {background-color:red; width:100%;}
+    #container{flex-direction: column-reverse;}
+}
+*/
 @media (min-width: 64rem) {
     html {
-        font-size: 120%;
+        font-size: 80%;
     }
 }
 @media (min-width: 40rem) {
     html {
-        font-size: 112%;
+        font-size: 90%;
     }
 }
