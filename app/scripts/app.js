@@ -113,7 +113,18 @@ app.controller("MainController", ['$scope', '$interval', '$firebase', function (
         preload: true
     });
 
-
+    $scope.showmenu = false;
+    $scope.buttonTasks = 'My tasks';
+    $scope.toogle = function() {
+        if($scope.showmenu){
+        $scope.showmenu = false;
+            $scope.buttonTasks = 'My tasks';
+        } else {
+            $scope.showmenu = true;
+            $scope.buttonTasks = 'Close';
+         
+        }
+    };
 
 }]);
 
@@ -160,4 +171,8 @@ app.controller('HistoryCtrl', function ($scope, $firebaseArray) {
         $scope.tasks.$remove(task);
     
     };
+    
+    
+   
+    
 });

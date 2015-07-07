@@ -1,26 +1,40 @@
-<div class="container">
+
+
+<div id="container">
     
-    <div class="menu" ng-controller="HistoryCtrl">
-        <div>My tasks 
+    <div class="menu" ng-show="showmenu" ng-controller="HistoryCtrl">
+        <div>
+            <div style="color:rgba(216, 109, 64, 1)" ng-click="toogle()">Close</div>
+            <span style="color:rgba(216, 109, 64, 1)">History </span>
             <div class="form">
                 <form ng-submit="addMessages()">
                     <label>
-                        <input type="text" ng-model="newTask" placeholder="my first task" />
-                        <button id="button-submit">Save</button>
+                        <input type="text" ng-model="newTask" placeholder="new task" value=" " maxlength="25"/>
+                        <button id="button-submit">+</button>
                     </label>
                 </form>
             </div>
         </div>
         <div class="cards" ng-repeat="task in tasks | orderBy: '-created_at'">
-            <div class="card-time">{{task.created_at | date:'MMM d, y H:mm'}}</div><div class="card-counter">{{counter}}</div>
-            <div class="card-name">{{task.text}}</div>
-            <div class="card-delete" ng-click=delete(task)>delete</div>
-          
-
-
+            <div class="top">
+            <div class="time">{{task.created_at | date:'MMM d, y H:mm'}}</div>
+                <div class="counter">{{counter}} x</div><div id="minitomato"><img  src="/app/images/favicon.ico"/></div>
+                </div>
+            <div class="bottom">
+            <div class="name">{{task.text}}</div>
+                </div>
+            <div class="delete" ng-click=delete(task)>delete</div>
+                
         </div>
     </div>
 
+    
+    <div class="hero">
+        
+        <div class="hero-head">
+        <div ng-click="toogle()">Record my Tasks</div>
+         <div class="signup">Sign Up</div>   
+        </div>
     <div class="contain-logo"><img class="logo" src="/app/images/tomato4_logo.png" /></div>
 
 
@@ -51,7 +65,7 @@
             RESET BREAK
         </div>
     </div>
-
+</div>
 </div>
 <footer>
     <span>{{footerMessage}}</span>
