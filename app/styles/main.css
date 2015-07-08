@@ -106,7 +106,7 @@ html {
 .menu.ng-hide {
   transform: translate(-50px, 0px);
 
-    scale: 0.5;ß
+    scale: 0.5;
 }
 
 
@@ -198,7 +198,7 @@ input {
 }
 footer {
     background-color: rgba(136, 175, 145, 1);
-    position: absolute;
+    position: fixed;
     padding: 5px;
     bottom: 0;
     width: 100%;
