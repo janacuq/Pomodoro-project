@@ -4,16 +4,17 @@
     
     <div class="menu" ng-show="showmenu" ng-controller="HistoryCtrl">
         <div>
-            <div style="color:rgba(216, 109, 64, 1);font-size:1rem;" ng-click="toogle()">Close</div>
-            <span style="color:rgba(216, 109, 64, 1)">History </span>
-            <div class="form">
+             <div class="ion-ios-close" ng-click="toogle()"></div>
+            <div class="buttonHistory">Resume tasks</div>
+           
+            
                 <form ng-submit="addMessages()">
                     <label>
-                        <input type="text" ng-model="newTask" placeholder="new task" value=" " maxlength="25"/>
-                        <button id="button-submit">+</button>
+                        <input type="text" ng-model="newTask" placeholder="write here your task" value=" " maxlength="25"/>
+                        <button class="ion-ios-plus" id="button-submit"></button>
                     </label>
                 </form>
-            </div>
+           
         </div>
         <div class="cards" ng-repeat="task in tasks | orderBy: '-created_at'">
             <div class="top">
@@ -32,8 +33,8 @@
     <div class="hero">
         
         <div class="hero-head">
-        <div ng-click="toogle()" ng-hide="showmenu">Record my Tasks</div>
-         <div class="signup">Sign Up</div>   
+        <div ng-click="toogle()" ng-hide="showmenu" class="ion-ios-paper-outline"></div>
+         <div class="signup">sign up</div>   
         </div>
     <div class="contain-logo"><img class="logo" src="/app/images/tomato4_logo.png" /></div>
 

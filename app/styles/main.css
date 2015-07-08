@@ -4,8 +4,7 @@ html {
 }
 
 .hero-head {
-    display: flex;
-    justify-content: space-between;
+    display: inline;
     color: white;
        
      
@@ -15,15 +14,24 @@ html {
     
     cursor: pointer;
     border: solid 2px white;
-    padding: 5px;
- 
+    margin-top: 15px;
+    padding: 5px 10px 5px 10px;
+    float: right;
+    font-size: 1.2rem;
 }
 
+
+.ion-ios-paper-outline {
+    font-size: 4rem;
+    float: left;
+     padding: 5px;
+
+}
 /* container */
 
 #container {
     margin: 0 auto;
-    max-width: 64rem;
+   height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -31,11 +39,17 @@ html {
 .hero {
     width: 100%;
 }
+
+.contain-logo {
+    padding-top: 3rem;
+    text-align: center;
+
+}
 .logo {
-    display: block;
-    margin: 0 auto;
+    display: inline-block;
+  
     width: 160px;
-    margin-top: 1rem;
+    
 }
 .timer {
     position: relative;
@@ -84,6 +98,7 @@ html {
 
     width: 40%;
     margin-top: 0px;
+   padding-bottom: 5rem;
     background-color: white;
     color: rgba(227, 222, 210, 1);
     font-size: 2rem;
@@ -91,12 +106,11 @@ html {
     padding-top: 10px;
     display: flex;
     flex-direction: column;
-    z-index: 1;
     overflow: auto;
-    transform: translate(0px, 0px);
-    scale: 1;
+ 
 }
 
+/*
 .menu.ng-hide-add.ng-hide-add-active,
 .menu.ng-hide-remove.ng-hide-remove-active {
   -webkit-transition: all 0.3s ease-in-out;
@@ -108,10 +122,28 @@ html {
 
     scale: 0.5;
 }
+*/
+
+.buttonHistory {
+    padding-left:  10px;
+    color: rgba(136, 175, 145, 1);
+
+}
+.ion-ios-close{
+    font-size: 2rem;
+    color: rgba(216, 109, 64, 1);
+    float: right;
+    padding-right: 2%; 
+     cursor: pointer;
+ 
+}
 
 
+label{
 
-
+    display: inline;
+   
+}
 
 input[type='text'] {
     background-image: url(/app/images/pencilss.png);
@@ -122,25 +154,30 @@ input[type='text'] {
 input[type='text']::-webkit-input-placeholder {
     color: rgba(227, 222, 210, 1);
 }
+
+
 input {
+
     font-family: 'Roboto', sans-serif;
-    width: 99%;
+
     height: 40px;
-    font-size: 1.2rem;
+
+    font-size: 1rem;
     text-align: center;
     border: none;
     outline: none;
     color: rgba(136, 175, 145, 1);
 }
 #button-submit {
-    font-family: 'Roboto', sans-serif;
-    font-size: 0.8rem;
-    border: solid 1px rgba(136, 175, 145, 1);
-    border-radius: 50%;
+ 
+   
+
     background-color: white;
+    font-size: 1.5rem;
     color: rgba(136, 175, 145, 1);
     vertical-align: middle;
      outline: none;
+    border: none;
     cursor: pointer;
 }
 
@@ -195,6 +232,7 @@ input {
     font-size: 0.8rem;
     margin-top: 10px;
     text-align: right;
+     cursor: pointer;
 }
 footer {
     background-color: rgba(136, 175, 145, 1);
@@ -209,7 +247,7 @@ footer {
 }
 
 
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 800px) {
     .menu {width:100%;}
     #container{flex-direction: column-reverse;}
 }
@@ -219,13 +257,16 @@ footer {
     #container{flex-direction: column-reverse;}
 }
 */
-@media (min-width: 64rem) {
+
+
+
+@media (min-width: 646px) {
     html {
-        font-size: 80%;
+        font-size: 112%;
     }
 }
 @media (min-width: 40rem) {
     html {
-        font-size: 90%;
+        font-size: 120%;
     }
 }
