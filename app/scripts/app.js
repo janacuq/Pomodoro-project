@@ -164,7 +164,7 @@ app.controller('HistoryCtrl', function ($scope, $firebaseArray) {
             text: $scope.newTask,
             created_at: Firebase.ServerValue.TIMESTAMP,
         });
-
+        $scope.newTask = '';
     };
 
     $scope.delete = function (task) {

@@ -1,72 +1,62 @@
 html {
     background-color: rgba(227, 222, 210, 1);
     font-family: 'Roboto', sans-serif;
+    min-height: 100%;
 }
-
 .hero-head {
     display: inline;
     color: white;
-       
-     
-
 }
 .signup {
-    
     cursor: pointer;
     border: solid 2px white;
-  
     padding: 5px 10px 5px 10px;
     float: right;
     font-size: 1rem;
 }
-
-
 .ion-ios-paper-outline {
     font-size: 3rem;
     float: left;
-    margin-top: -0.5rem;
-
+    cursor: pointer;
 }
+
 /* container */
 
+body {
+    min-height: 100vh;
+    
+}
 #container {
-  
-   height: 100%;
+    height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
 }
 .hero {
     width: 100%;
+    height: 100%;
 }
-
 .contain-logo {
-    padding-top: 5rem;
+    padding-top: 8%;
     text-align: center;
     margin: 0 auto;
-
 }
 .logo {
     display: inline-block;
-  
     width: 160px;
-    
 }
 .timer {
-    position: relative;
     font-size: 8rem;
     color: white;
     text-align: center;
-    margin-top: -6rem;
+    margin-top: -10%;
 }
 .butt {
-    position: relative;
-    margin-top: -100px;
+    margin-top: -5%;
 }
 .buttons {
     background-color: rgba(136, 175, 145, 1);
-    width: 292px;
-    height: 50px;
+    width: 20%;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -74,12 +64,11 @@ html {
     letter-spacing: 2.5px;
     color: white;
     text-align: center;
-    padding-top: 9px;
     border: solid 4px white;
+    vertical-align: middle;
 }
 .button-reset {
-    width: 150px;
-    height: 50px;
+    width: 20%;
     cursor: pointer;
     margin-left: auto;
     margin-right: auto;
@@ -96,10 +85,10 @@ html {
 /*menu left*/
 
 .menu {
-
     width: 40%;
+    
     margin-top: 0px;
-   padding-bottom: 5rem;
+    padding-bottom: 5rem;
     background-color: white;
     color: rgba(227, 222, 210, 1);
     font-size: 2rem;
@@ -108,7 +97,6 @@ html {
     display: flex;
     flex-direction: column;
     overflow: auto;
- 
 }
 
 /*
@@ -127,27 +115,20 @@ html {
 
 .buttonHistory {
     font-size: 1.5rem;
-    padding-left:  10px;
+    padding-left: 10px;
     color: rgba(136, 175, 145, 1);
-
 }
-.ion-ios-close{
+.ion-ios-close {
     font-size: 1.5rem;
     color: rgba(216, 109, 64, 1);
     float: right;
     margin-top: -10px;
     margin-right: 3px;
-     cursor: pointer;
- 
+    cursor: pointer;
 }
-
-
-label{
-
+label {
     display: inline;
-   
 }
-
 input[type='text'] {
     background-image: url(/app/images/pencilss.png);
     background-repeat: no-repeat;
@@ -157,14 +138,9 @@ input[type='text'] {
 input[type='text']::-webkit-input-placeholder {
     color: rgba(227, 222, 210, 1);
 }
-
-
 input {
-
     font-family: 'Roboto', sans-serif;
-
     height: 40px;
-
     font-size: 1rem;
     text-align: center;
     border: none;
@@ -172,37 +148,32 @@ input {
     color: rgba(136, 175, 145, 1);
 }
 #button-submit {
- 
-   
-
     background-color: white;
     font-size: 1.5rem;
     color: rgba(136, 175, 145, 1);
     vertical-align: middle;
-     outline: none;
+    outline: none;
     border: none;
     cursor: pointer;
 }
-
 .cards.ng-enter {
-	-webkit-transition: 0.5s linear all; /* Chrome */
-	transition: 0.5s linear all;
-	opacity: 0;
+    -webkit-transition: 0.5s linear all;
+    /* Chrome */
+    transition: 0.5s linear all;
+    opacity: 0;
 }
- 
-.cards.ng-enter-active{
-	opacity: 1;
+.cards.ng-enter-active {
+    opacity: 1;
 }
-.cards.ng-leave{
-    	-webkit-transition: 0.5s linear all; /* Chrome */
-	transition: 0.5s linear all;
-	opacity: 1;
+.cards.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    /* Chrome */
+    transition: 0.5s linear all;
+    opacity: 1;
 }
-.cards.ng-leave-active{
-	opacity: 0;
+.cards.ng-leave-active {
+    opacity: 0;
 }
-
-
 .cards {
     display: flex;
     flex-direction: column;
@@ -226,7 +197,6 @@ input {
     font-size: 0.8rem;
     border-bottom: solid 1px rgba(227, 222, 210, 0.8);
 }
-
 .bottom .name {
     margin-top: 10px;
 }
@@ -235,7 +205,7 @@ input {
     font-size: 0.8rem;
     margin-top: 10px;
     text-align: right;
-     cursor: pointer;
+    cursor: pointer;
 }
 footer {
     background-color: rgba(136, 175, 145, 1);
@@ -243,25 +213,33 @@ footer {
     padding: 5px;
     bottom: 0;
     width: 100%;
-  vertical-align: middle;
+    vertical-align: middle;
     text-align: center;
     color: white;
     font-size: 1rem;
 }
-
-
-@media screen and (max-width: 841px) {
-    .menu {width:100%;}
-    #container{flex-direction: column-reverse;}
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
 }
+@media screen and (max-width: 841px) {
+    .menu {
+        width: 100%;
+    }
+    #container {
+        flex-direction: column-reverse;
+    }
+}
+
 /*
 @media screen and (min-width: 769px) {
     .menu {background-color:red; width:100%;}
     #container{flex-direction: column-reverse;}
 }
 */
-
-
 
 @media (min-width: 841px) {
     html {
