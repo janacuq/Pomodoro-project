@@ -23,12 +23,14 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
 }]);
 
 
-app.controller("MainController", ['$scope', '$interval', '$firebase', function ($scope, $interval, $firebaseArray) {
+app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope', function ($scope, $interval, $firebaseArray, $rootScope) {
 
 
-
+    
+    
 
     $scope.time = '3';
+  
     $scope.timeBreak = '6';
     $scope.footerMessage = 'Ready?';
 
@@ -165,6 +167,7 @@ app.controller('HistoryCtrl', function ($scope, $firebaseArray) {
             created_at: Firebase.ServerValue.TIMESTAMP,
         });
         $scope.newTask = '';
+        
     };
 
     $scope.delete = function (task) {
