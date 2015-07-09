@@ -11,12 +11,12 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
 
     $stateProvider.state('home', {
         url: '/home',
-        templateUrl: '/app/templates/home.html'
+        templateUrl: '/templates/home.html'
     });
     $stateProvider.state('clock', {
         url: '/clock',
         controller: 'MainController',
-        templateUrl: '/app/templates/clock.html'
+        templateUrl: '/templates/clock.html'
     });
 
 
