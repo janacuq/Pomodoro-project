@@ -1,7 +1,6 @@
 $beige: #E3DED2;
 $green: #88AF91;
 $red: #D86D40;
-
 html {
     background-color: $beige;
     font-family: 'Roboto', sans-serif;
@@ -70,7 +69,7 @@ footer {
         text-align: center;
         .logo {
             display: inline-block;
-            width: 15%;
+            width: 200px;
         }
     }
     .timer {
@@ -109,7 +108,6 @@ footer {
         }
     }
 }
-
 //menu left
 .menu {
     div {
@@ -193,26 +191,27 @@ footer {
     }
 }
 //each card
-.top {
-    display: flex;
-    position: relative;
-    height: 20px;
-    justify-content: space-between;
-    vertical-align: text-bottom;
-    font-size: 0.8rem;
-    border-bottom: solid 1px rgba($beige, 0.8);
+.cards {
+    .top {
+        display: flex;
+        position: relative;
+        height: 20px;
+        justify-content: space-between;
+        vertical-align: text-bottom;
+        font-size: 0.8rem;
+        border-bottom: solid 1px rgba($beige, 0.8);
+    }
+    .bottom .name {
+        margin-top: 10px;
+    }
+    .delete {
+        color: $red;
+        font-size: 0.8rem;
+        margin-top: 10px;
+        text-align: right;
+      
+    }
 }
-.bottom .name {
-    margin-top: 10px;
-}
-.delete {
-    color: $red;
-    font-size: 0.8rem;
-    margin-top: 10px;
-    text-align: right;
-    cursor: pointer;
-}
-
 
 /*
 /*
@@ -298,12 +297,8 @@ footer {
 /* Larger than desktop 
 @media (min-width: 1000px) {}
 
-/* Larger than Desktop HD 
+/* Larger than Desktop HD */
 @media (min-width: 1200px) {
-
-   .hero-content {
-        justify-content: space-around; 
-    }
     
     .butt {
     margin-bottom: 10%;
@@ -312,4 +307,4 @@ footer {
         width: 250px;
     }
 }
-*/
+
