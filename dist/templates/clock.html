@@ -1,17 +1,17 @@
 
 
-<div id="container">
+<div class="container">
     
     <div class="menu" ng-show="showmenu" ng-controller="HistoryCtrl">
         <div>
-             <div class="ion-ios-close" ng-click="toogle()"></div>
-            <div class="buttonHistory">Resume tasks</div>
+             <div class="button ion-ios-close" ng-click="toogle()"></div>
+            <div class="button History">Resume tasks</div>
            
             
                 <form ng-submit="addMessages()">
                     <label>
                         <input type="text" ng-model="newTask" placeholder="write here your task" value=" " maxlength="25"/>
-                        <button class="ion-ios-plus" id="button-submit"></button>
+                        <button class="button ion-ios-plus" id="button-submit"></button>
                     </label>
                 </form>
            
@@ -33,8 +33,8 @@
     <div class="hero">
         
         <div class="hero-head">
-        <div ng-click="toogle()" ng-hide="showmenu" class="ion-ios-paper-outline"></div>
-         <div class="signup">sign up</div>   
+        <div ng-click="toogle()" ng-hide="showmenu" class="button ion-ios-paper-outline"></div>
+         <div class="button signup">sign up</div>   
         </div>
     <div class="contain-logo"><img class="logo" src="/images/tomato4_logo.png" /></div>
 
@@ -44,25 +44,25 @@
         <p ng-hide="Work">{{timeBreak | timeCode}}</p>
     </div>
 
-    <div class="butt">
-        <div class="buttons" ng-click="start()" ng-if="Work && !runningWork">
+    <div class="lowbuttons">
+        <div class="button start" ng-click="start()" ng-if="Work && !runningWork">
             start
         </div>
-        <div class="buttons" ng-click="stop()" ng-if="Work && runningWork" style="background-color: rgba(238, 124, 87, 1)">
+        <div class="button start" ng-click="stop()" ng-if="Work && runningWork" style="background-color: rgba(238, 124, 87, 1)">
             pause
         </div>
         </br>
-        <div class="button-reset" ng-click="reset()" ng-if="Work">
+        <div class="button reset" ng-click="reset()" ng-if="Work">
             RESET
         </div>
-        <div class="buttons" ng-click="startBreak()" ng-if="!Work && !runningBreak">
+        <div class="button start" ng-click="startBreak()" ng-if="!Work && !runningBreak">
             start break
         </div>
-        <div class="buttons" ng-click="stopBreak()" ng-if="!Work && runningBreak" style="background-color: rgba(238, 124, 87, 1)">
+        <div class="button start" ng-click="stopBreak()" ng-if="!Work && runningBreak" style="background-color: rgba(238, 124, 87, 1)">
             pause break
         </div>
         </br>
-        <div class="button-reset" ng-click="resetBreak()" ng-if="!Work">
+        <div class="button reset" ng-click="resetBreak()" ng-if="!Work">
             RESET BREAK
         </div>
     </div>
