@@ -207,13 +207,18 @@ footer {
     margin-left: -8px;
     margin-top: -8px; } }
 
+/*
 @media (max-width: 736px) and (orientation: landscape) {
-  .contain-logo {
-    z-index: -1;
-    opacity: 0.1; }
-  .timer {
-    margin-bottom: 100px; } }
+    .contain-logo {
+        z-index: -1;
+        opacity: 0.1;
+    }
+    .timer {
+        margin-bottom: 100px;
+    }
+}
 
+*/
 @media (min-width: 400px) {
   .hero .contain-logo .logo {
     width: 130px; }
@@ -230,17 +235,17 @@ footer {
   .hero .contain-logo .logo {
     width: 180px; }
   .hero .timer p, .hero .lowbuttons .start {
-    font-size: 150%; } }
+    font-size: 140%; } }
 
 @media (min-width: 1000px) {
   .hero .contain-logo .logo {
     width: 200px; }
   .container .hero, .hero .lowbuttons .start {
-    font-size: 170%; } }
+    font-size: 150%; } }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
   .hero .contain-logo .logo {
     width: 250px; }
   .container .hero {
-    font-size: 200%; } }
+    font-size: 180%; } }

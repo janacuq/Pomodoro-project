@@ -24,9 +24,12 @@ app.config(['$stateProvider', '$locationProvider', '$urlRouterProvider', functio
 }]);
 
 
-app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope', function ($scope, $interval, $firebaseArray, $rootScope) {
+app.controller("MainController", ['$scope', '$interval', '$firebaseArray','$rootScope', function ($scope, $interval, $firebaseArray, $rootScope) {
 
+     var ref = new Firebase("https://amber-inferno-5080.firebaseio.com/");
 
+    $scope.tasks = $firebaseArray(ref);
+    
     
     
 
@@ -46,22 +49,27 @@ app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope
                 $scope.mySound.play();
                 $scope.runningWork = false;
                 $scope.counter += 1;
+                var task = $scope.tasks[$scope.tasks.length - 1];
+                task.count += 1;
+                $scope.tasks.$save(task);
                 console.log($scope.counter);
                 if ($scope.counter % 4 === 0) {
                     $scope.Work = false;
                     $scope.timeBreak = '8';
+                    $rootScope.title = $scope.timeBreak;
                     console.log('long Break');
                     $scope.footerMessage = 'You deserve a long break!';
                     $interval.cancel(promise);
                 } else {
                     $scope.timeBreak = '6';
+                    $rootScope.title = $scope.timeBreak;
                     $scope.footerMessage = 'Time for a break';
                     $scope.Work = false;
-                    console.log('finishWork');
                     $interval.cancel(promise);
                 }
             } else {
                 $scope.time -= 1;
+            $rootScope.title = $scope.time
                 $scope.runningWork = true;
                 $scope.footerMessage = 'Sssshhh...Work in Progress';
             }
@@ -75,6 +83,7 @@ app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope
 
     $scope.reset = function () {
         $scope.time = '1500';
+        $rootScope.title = $scope.time;
         $scope.stop();
         $scope.runningWork = false;
     };
@@ -84,6 +93,7 @@ app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope
             if ($scope.timeBreak === 0) {
                 $scope.mySound.play();
                 $scope.time = '3';
+                $rootScope.title = $scope.time;
                 $interval.cancel(promise2);
                 console.log('finishBreak');
                 $scope.Work = true;
@@ -92,6 +102,7 @@ app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope
 
             } else {
                 $scope.timeBreak -= 1;
+                $rootScope.title = $scope.timeBreak;
                 $scope.runningBreak = true;
                 $scope.footerMessage = 'Enjoy your break';
             }
@@ -106,6 +117,7 @@ app.controller("MainController", ['$scope', '$interval', '$firebase','$rootScope
 
         $scope.resetBreak = function () {
             $scope.timeBreak = '300';
+            $rootScope.title = $scope.timeBreak;
             $scope.stopBreak();
             $scope.runningBreak = false;
 
@@ -147,8 +159,12 @@ app.filter('timeCode', function () {
         while (sec.length < 2) {
             sec = '0' + sec;
         }
-        hr = (hr) ? ':' + hr : '';
-        return hr + min + ':' + sec;
+   
+        if(isNaN(sec)){
+            return '--:--'
+        } else {
+        return  min + ':' + sec;
+        }
     }
 });
 
@@ -160,14 +176,17 @@ app.controller('HistoryCtrl', function ($scope, $firebaseArray) {
     $scope.tasks = $firebaseArray(ref);
 
     $scope.newTask = '';
-
+    
+    
     $scope.addMessages = function () {
 
         $scope.tasks.$add({
             text: $scope.newTask,
             created_at: Firebase.ServerValue.TIMESTAMP,
+            count: 0
         });
         $scope.newTask = '';
+        
         
     };
 

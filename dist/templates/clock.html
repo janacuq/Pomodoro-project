@@ -19,7 +19,7 @@
         <div class="cards" ng-repeat="task in tasks | orderBy: '-created_at'">
             <div class="top">
             <div class="time">{{task.created_at | date:'MMM d, y H:mm'}}</div>
-                <div class="counter">{{counter}} x</div>
+                <div class="counter">{{task.count}} x</div>
                 </div>
             <div class="bottom">
             <div class="name">{{task.text}}</div>
