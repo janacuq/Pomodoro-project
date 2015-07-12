@@ -11,7 +11,7 @@
                 <form ng-submit="addMessages()">
                     <label>
                         <input type="text" ng-model="newTask" placeholder="write here your task" value=" " maxlength="25"/>
-                        <button class="button ion-ios-plus" id="button-submit"></button>
+                        <button class="button ion-ios-plus" ></button>
                     </label>
                 </form>
            
@@ -19,7 +19,7 @@
         <div class="cards" ng-repeat="task in tasks | orderBy: '-created_at'">
             <div class="top">
             <div class="time">{{task.created_at | date:'MMM d, y H:mm'}}</div>
-                <div class="counter">{{counter}} x</div><div id="minitomato"><img  src="/images/favicon.ico"/></div>
+                <div class="counter">{{counter}} x</div>
                 </div>
             <div class="bottom">
             <div class="name">{{task.text}}</div>
@@ -66,12 +66,13 @@
             RESET BREAK
         </div>
     </div>
-</div>
-
-</div>
-
  <footer>
     <span>{{footerMessage}}</span>
 
 </footer>
+</div>
+
+</div>
+
+
 

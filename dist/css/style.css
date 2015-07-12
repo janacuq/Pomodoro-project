@@ -73,21 +73,23 @@ footer {
   text-align: center; }
   .hero .contain-logo .logo {
     display: inline-block;
-    width: 200px; }
+    width: 100px; }
 .hero .timer {
-  font-size: 8rem;
+  margin-top: 10%;
+  font-size: 6rem;
   color: white;
   text-align: center; }
-  .hero .timer .timer p {
-    margin: 0 auto; }
+  .hero .timer p {
+    margin: auto; }
 .hero .lowbuttons {
+  margin-top: 10%;
   margin-bottom: 20%; }
   .hero .lowbuttons .start {
     background-color: #88AF91;
     width: 12rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 2rem;
+    font-size: 1.5rem;
     letter-spacing: 2.5px;
     text-align: center;
     border: solid 4px white;
@@ -98,7 +100,7 @@ footer {
     width: 12rem;
     margin-left: auto;
     margin-right: auto;
-    font-size: 1rem;
+    font-size: 0.8rem;
     color: #D86D40;
     text-align: center;
     vertical-align: bottom;
@@ -157,15 +159,15 @@ footer {
   overflow: hidden;
   opacity: 1; }
 
-.cards .ng-enter {
+.cards.ng-enter {
   transition: 0.5s linear all;
   opacity: 0; }
-.cards .ng-enter-active {
+.cards.ng-enter-active {
   opacity: 1; }
-.cards .ng-leave {
+.cards.ng-leave {
   transition: 0.5s linear all;
   opacity: 1; }
-.cards .ng-leave-active {
+.cards.ng-leave-active {
   opacity: 0; }
 
 .cards .top {
@@ -180,6 +182,11 @@ footer {
   vertical-align: text-bottom;
   font-size: 0.8rem;
   border-bottom: solid 1px rgba(227, 222, 210, 0.8); }
+  .cards .top .counter {
+    margin-top: -4px; }
+    .cards .top .counter::after {
+      content: url(/images/tomatito.png);
+      padding-left: 5px; }
 .cards .bottom .name {
   margin-top: 10px; }
 .cards .delete {
@@ -188,91 +195,52 @@ footer {
   margin-top: 10px;
   text-align: right; }
 
-/*
-/*
-*,
-*:before,
-*:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
-/*
-@media screen and (min-width: 950px) {
-    .hero-content {
-        justify-content: space-around; 
-    }
-    
-    
-    .hero-head,.contain-logo,.timer {
-        margin-bottom: 5%;
-    }
-    
-}
-    
-
-
+*, *:before, *:after {
+  box-sizing: border-box; }
 
 @media screen and (max-width: 841px) {
-    .menu {
-        position: absolute;
-        height:100%;
-        width: 100%;
-        z-index: 2;
-        margin-left: -8px;
-        margin-top: -8px;
-    }  
-    .logo {
-        width: 160px;
-    }
-}
+  .container .menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    margin-left: -8px;
+    margin-top: -8px; } }
 
+@media (max-width: 736px) and (orientation: landscape) {
+  .contain-logo {
+    z-index: -1;
+    opacity: 0.1; }
+  .timer {
+    margin-bottom: 100px; } }
 
-@media (min-width: 841px) {
-    html {
-        font-size: 112%;
-    }
-}
+@media (min-width: 400px) {
+  .hero .contain-logo .logo {
+    width: 130px; }
+  .hero .timer p, .hero .lowbuttons .start {
+    font-size: 120%; } }
 
-@media (max-width: 320px) {
-    html {
-        font-size: 80%;
-    }
-    .logo {
-    width: 140px;
-    }
-}
-*/
-/*
+@media (min-width: 550px) {
+  .hero .contain-logo .logo {
+    width: 160px; }
+  .hero .timer p, .hero .lowbuttons .start {
+    font-size: 130%; } }
 
-@media (max-width: 736px) and (orientation: landscape){
-  
-  .contain-logo{
-   z-index:-1;
-      opacity: 0.1;
-      
-    }
-    
-    .timer {
-    margin-bottom: 100px;
-    }
-}
+@media (min-width: 750px) {
+  .hero .contain-logo .logo {
+    width: 180px; }
+  .hero .timer p, .hero .lowbuttons .start {
+    font-size: 150%; } }
 
- Larger than mobile 
-@media (min-width: 400px) {}
-
-/* Larger than phablet (also point when grid becomes active) 
-@media (min-width: 550px) {}
-
-/* Larger than tablet 
-@media (min-width: 750px) {}
-
-/* Larger than desktop 
-@media (min-width: 1000px) {}
+@media (min-width: 1000px) {
+  .hero .contain-logo .logo {
+    width: 200px; }
+  .container .hero, .hero .lowbuttons .start {
+    font-size: 170%; } }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
-  .butt {
-    margin-bottom: 10%; }
-  .logo {
-    width: 250px; } }
+  .hero .contain-logo .logo {
+    width: 250px; }
+  .container .hero {
+    font-size: 200%; } }
