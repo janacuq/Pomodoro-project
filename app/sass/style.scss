@@ -1,310 +1,322 @@
 $beige: #E3DED2;
 $green: #88AF91;
 $red: #D86D40;
+
 html {
-    background-color: $beige;
-    font-family: 'Roboto', sans-serif;
-    min-height: 100%;
+  background-color: $beige;
+  font-family: 'Roboto', sans-serif;
+  min-height: 100%;
 }
 body {
-    min-height: 100vh;
+  min-height: 100vh;
 }
 .button {
-    cursor: pointer;
-    color: white;
+  cursor: pointer;
+  color: white;
 }
 .container {
-    height: 100vh;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  .hero {
     width: 100%;
+    height: 100%;
     display: flex;
-    justify-content: center;
-    .hero {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .menu {
-        width: 40%;
-        margin-top: 0px;
-        padding-bottom: 5rem;
-        background-color: white;
-        color: $beige;
-        font-size: 2rem;
-        text-align: center;
-        padding-top: 10px;
-        display: flex;
-        flex-direction: column;
-        overflow: auto;
-    }
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .menu {
+    width: 40%;
+    margin-top: 0px;
+    padding-bottom: 5rem;
+    background-color: white;
+    color: $beige;
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
 }
 footer {
-    background-color: $green;
-    position: fixed;
-    padding: 5px;
-    bottom: 0;
-    width: 100%;
-    vertical-align: middle;
-    text-align: center;
-    color: white;
-    font-size: 1rem;
+  background-color: $green;
+  position: fixed;
+  padding: 5px;
+  bottom: 0;
+  width: 100%;
+  vertical-align: middle;
+  text-align: center;
+  color: white;
+  font-size: 1rem;
 }
 // hero 
 .hero {
-    .hero-head {
-        display: inline;
-        .signup {
-            border: solid 2px white;
-            padding: 5px 10px 5px 10px;
-            float: right;
-            font-size: 1rem;
-        }
-        .ion-ios-paper-outline {
-            font-size: 3rem;
-            float: left;
-        }
+  .hero-head {
+    display: inline;
+    .signup {
+      border: solid 2px white;
+      padding: 5px 10px 5px 10px;
+      float: right;
+      font-size: 1rem;
     }
-    .contain-logo {
-        text-align: center;
-        .logo {
-            display: inline-block;
-            width: 100px;
-        }
+    .ion-ios-paper-outline {
+      font-size: 3rem;
+      float: left;
     }
-    .timer {
-        margin-top: 10%;
-        font-size: 6rem;
-        color: white;
-        text-align: center;
-        p {
-            margin: auto;
-        }
+  }
+  .contain-logo {
+    text-align: center;
+    .logo {
+      display: inline-block;
+      width: 120px;
     }
-    .lowbuttons {
-        margin-top: 10%;
-        margin-bottom: 20%;
-        .start {
-            background-color: $green;
-            width: 12rem;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 1.5rem;
-            letter-spacing: 2.5px;
-            text-align: center;
-            border: solid 4px white;
-            vertical-align: middle;
-            &:hover {
-                box-shadow: 7px 7px 0px rgba(white, 0.5);
-            }
-        }
-        .reset {
-            width: 12rem;
-            margin-left: auto;
-            margin-right: auto;
-            font-size: 0.8rem;
-            color: $red;
-            text-align: center;
-            vertical-align: bottom;
-            letter-spacing: 2px;
-        }
+  }
+  .timer {
+    margin-top: 10%;
+    font-size: 6rem;
+    color: white;
+    text-align: center;
+    p {
+      margin: auto;
     }
+  }
+  .lowbuttons {
+    margin-top: 10%;
+    margin-bottom: 20%;
+    .start {
+      background-color: $green;
+      width: 15rem;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.5rem;
+      letter-spacing: 2.5px;
+      text-align: center;
+      border: solid 4px white;
+      vertical-align: middle;
+      &:hover {
+        box-shadow: 7px 7px 0px rgba(white, 0.5);
+      }
+    }
+    .reset {
+      width: 12rem;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.8rem;
+      color: $red;
+      text-align: center;
+      vertical-align: bottom;
+      letter-spacing: 2px;
+    }
+  }
 }
 //menu left
 .menu {
-    div {
-        .History {
-            font-size: 1.5rem;
-            padding-left: 10px;
-            color: $green;
-        }
-        .ion-ios-close {
-            font-size: 1.5rem;
-            color: $red;
-            float: right;
-            margin-top: -10px;
-            margin-right: 3px;
-        }
+  div {
+    .History {
+      font-size: 1.5rem;
+      padding-left: 10px;
+      color: $green;
     }
-    form {
-        label {
-            display: inline;
-            input {
-                font-family: 'Roboto', sans-serif;
-                height: 40px;
-                font-size: 1rem;
-                text-align: center;
-                border: none;
-                outline: none;
-                color: $green;
-                [type='text'] {
-                    background-image: url(/app/images/pencilss.png);
-                    background-repeat: no-repeat;
-                    background-position: 7px 7px;
-                    background-size: 20px;
-                }
-                [type='text']::-webkit-input-placeholder {
-                    color: $beige;
-                }
-            }
-            .ion-ios-plus {
-                background-color: white;
-                font-size: 1.5rem;
-                color: rgba(136, 175, 145, 1);
-                vertical-align: middle;
-                outline: none;
-                border: none;
-                cursor: pointer;
-            }
-        }
+    .ion-ios-close {
+      font-size: 1.5rem;
+      color: $red;
+      float: right;
+      margin-top: -10px;
+      margin-right: 3px;
     }
-    .cards {
-        display: flex;
-        flex-direction: column;
-        position: relative;
-        border: solid 1px rgba($beige, 0.8);
-        box-shadow: 5px 5px 0px rgba($beige, 0.8);
-        margin: 10px;
-        padding: 10px;
+  }
+  form {
+    label {
+      display: inline;
+      input {
+        font-family: 'Roboto', sans-serif;
+        height: 40px;
         font-size: 1rem;
+        text-align: center;
+        border: none;
+        outline: none;
         color: $green;
-        text-align: left;
-        overflow: hidden;
-        opacity: 1;
+        [type='text'] {
+          background-image: url(/app/images/pencilss.png);
+          background-repeat: no-repeat;
+          background-position: 7px 7px;
+          background-size: 20px;
+        }
+        [type='text']::-webkit-input-placeholder {
+          color: $beige;
+        }
+      }
+      .ion-ios-plus {
+        background-color: white;
+        font-size: 1.5rem;
+        color: rgba(136, 175, 145, 1);
+        vertical-align: middle;
+        outline: none;
+        border: none;
+        cursor: pointer;
+      }
     }
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border: solid 1px rgba($beige, 0.8);
+    box-shadow: 5px 5px 0px rgba($beige, 0.8);
+    margin: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    color: $green;
+    text-align: left;
+    overflow: hidden;
+    opacity: 1;
+  }
 }
 //cards animation
 .cards {
-    &.ng-enter {
-        -webkit-transition: 0.5s linear all;
-        transition: 0.5s linear all;
-        opacity: 0;
-    }
-    &.ng-enter-active {
-        opacity: 1;
-    }
-    &.ng-leave {
-        -webkit-transition: 0.5s linear all;
-        transition: 0.5s linear all;
-        opacity: 1;
-    }
-    &.ng-leave-active {
-        opacity: 0;
-    }
+  &.ng-enter {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    opacity: 0;
+  }
+  &.ng-enter-active {
+    opacity: 1;
+  }
+  &.ng-leave {
+    -webkit-transition: 0.5s linear all;
+    transition: 0.5s linear all;
+    opacity: 1;
+  }
+  &.ng-leave-active {
+    opacity: 0;
+  }
 }
 //each card
 .cards {
-    .top {
-        display: flex;
-        position: relative;
-        height: 20px;
-        justify-content: space-between;
-        vertical-align: text-bottom;
-        font-size: 0.8rem;
-        border-bottom: solid 1px rgba($beige, 0.8);
-        .counter {
-            margin-top: -4px;
-            &::after {
-                content: url(/images/tomatito.png);
-                padding-left: 5px;
-            }
-        }
+  .top {
+    display: flex;
+    position: relative;
+    height: 20px;
+    justify-content: space-between;
+    vertical-align: text-bottom;
+    font-size: 0.8rem;
+    border-bottom: solid 1px rgba($beige, 0.8);
+    .counter {
+      margin-top: -4px;
+      &::after {
+        content: url(/images/tomatito.png);
+        padding-left: 5px;
+      }
     }
-    .bottom .name {
-        margin-top: 10px;
-    }
-    .delete {
-        color: $red;
-        font-size: 0.8rem;
-        margin-top: 10px;
-        text-align: right;
-    }
+  }
+  .bottom .name {
+    margin-top: 10px;
+  }
+  .delete {
+    color: $red;
+    font-size: 0.8rem;
+    margin-top: 10px;
+    text-align: right;
+  }
 }
-
-
-
 *,
 *:before,
 *:after {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
 }
 @media screen and (max-width: 841px) {
-    .container .menu {
-        position: absolute;
-        height: 100%;
-        width: 100%;
-        z-index: 2;
-        margin-left: -8px;
-        margin-top: -8px;
-    }
+  .container .menu {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    margin-left: -8px;
+    margin-top: -8px;
+  }
 }
-
-
-/*
-@media (max-width: 736px) and (orientation: landscape) {
-    .contain-logo {
-        z-index: -1;
-        opacity: 0.1;
-    }
-    .timer {
-        margin-bottom: 100px;
-    }
-}
-
-*/
 // Larger than mobile 
 @media (min-width: 400px) {
-    .hero .contain-logo .logo {
-        width: 130px;
-    }
-    .hero .timer p,
-    .hero .lowbuttons .start {
-        font-size: 120%
-    }
+  .hero .contain-logo .logo {
+    width: 150px;
+  }
+  .hero .timer p,
+  .hero .lowbuttons .start {
+    font-size: 120%
+  }
 }
 //Larger than phablet (also point when grid becomes active) 
 @media (min-width: 550px) {
-    .hero .contain-logo .logo {
-        width: 160px;
-    }
-    .hero .timer p,
-    .hero .lowbuttons .start,
-    {
-        font-size: 130%
-    }
+  .hero .contain-logo .logo {
+    width: 160px;
+  }
+  .hero .timer p,
+  .hero .lowbuttons .start,
+  {
+    font-size: 130%
+  }
 }
 // Larger than tablet 
 @media (min-width: 750px) {
-    .hero .contain-logo .logo {
-        width: 180px;
-    }
-    .hero .timer p,
-    .hero .lowbuttons .start,
-    {
-        font-size: 140%
-    }
+  .hero .contain-logo .logo {
+    width: 180px;
+  }
+  .hero .timer p,
+  .hero .lowbuttons .start,
+  {
+    font-size: 140%
+  }
 }
 // Larger than desktop 
 @media (min-width: 1000px) {
-    .hero .contain-logo .logo {
-        width: 200px;
+  .container {
+    .hero {
+      font-size: 150%;
+      .contain-logo {
+        .logo {
+          width: 200px;
+        }
+      }
+      .lowbuttons {
+        margin-bottom: 12%;
+        .start {
+          font-size: 150%;
+        }
+      }
     }
-    .container .hero,
-    .hero .lowbuttons .start,
-    {
-        font-size: 150%
-    }
+  }
 }
 
 /* Larger than Desktop HD */
 
 @media (min-width: 1200px) {
-    .hero .contain-logo .logo {
-        width: 250px;
+  .hero .contain-logo .logo {
+    width: 230px;
+  }
+  .container .hero {
+    font-size: 180%;
+    .timer {
+      font-size: 7rem;
     }
-    .container .hero {
-        font-size: 180%
+    .lowbuttons {
+      margin-bottom: 15%;
     }
+  }
+}
+@media (min-width: 1500px) {
+  .hero .contain-logo .logo {
+    width: 250px;
+  }
+  .container .hero {
+    font-size: 200%;
+    .timer {
+      font-size: 8rem;
+    }
+    .lowbuttons {
+      margin-bottom: 10%;
+    }
+  }
 }

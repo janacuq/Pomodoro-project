@@ -73,7 +73,7 @@ footer {
   text-align: center; }
   .hero .contain-logo .logo {
     display: inline-block;
-    width: 100px; }
+    width: 120px; }
 .hero .timer {
   margin-top: 10%;
   font-size: 6rem;
@@ -86,7 +86,7 @@ footer {
   margin-bottom: 20%; }
   .hero .lowbuttons .start {
     background-color: #88AF91;
-    width: 12rem;
+    width: 15rem;
     margin-left: auto;
     margin-right: auto;
     font-size: 1.5rem;
@@ -207,21 +207,9 @@ footer {
     margin-left: -8px;
     margin-top: -8px; } }
 
-/*
-@media (max-width: 736px) and (orientation: landscape) {
-    .contain-logo {
-        z-index: -1;
-        opacity: 0.1;
-    }
-    .timer {
-        margin-bottom: 100px;
-    }
-}
-
-*/
 @media (min-width: 400px) {
   .hero .contain-logo .logo {
-    width: 130px; }
+    width: 150px; }
   .hero .timer p, .hero .lowbuttons .start {
     font-size: 120%; } }
 
@@ -238,14 +226,32 @@ footer {
     font-size: 140%; } }
 
 @media (min-width: 1000px) {
-  .hero .contain-logo .logo {
-    width: 200px; }
-  .container .hero, .hero .lowbuttons .start {
-    font-size: 150%; } }
+  .container .hero {
+    font-size: 150%; }
+    .container .hero .contain-logo .logo {
+      width: 200px; }
+    .container .hero .lowbuttons {
+      margin-bottom: 12%; }
+      .container .hero .lowbuttons .start {
+        font-size: 150%; } }
 
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {
   .hero .contain-logo .logo {
+    width: 230px; }
+  .container .hero {
+    font-size: 180%; }
+    .container .hero .timer {
+      font-size: 7rem; }
+    .container .hero .lowbuttons {
+      margin-bottom: 15%; } }
+
+@media (min-width: 1500px) {
+  .hero .contain-logo .logo {
     width: 250px; }
   .container .hero {
-    font-size: 180%; } }
+    font-size: 200%; }
+    .container .hero .timer {
+      font-size: 8rem; }
+    .container .hero .lowbuttons {
+      margin-bottom: 10%; } }
