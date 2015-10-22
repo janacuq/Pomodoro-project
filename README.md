@@ -3,6 +3,13 @@ Bloc Base Project
 
 A base for Bloc frontend projects.
 
+
+
+
+<img src=http://i.imgur.com/kd03szE.png>
+
+<img src=http://i.imgur.com/9DOYlC0.png>
+
 ## Configuration
 
 Configuring this project should be consistent across Nitrous, Mac (local), and Vagrant.
