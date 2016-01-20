@@ -1,12 +1,15 @@
 {
-  "name": "base-frontend-project",
+  "name": "Pomodoro",
   "version": "0.0.1",
-  "description": "Bloc skeleton project for a single page application",
+  "engines": {
+    "node": "0.12.5"
+  },
+  "description": "time management app",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
   },
-  "author": "Bloc and Nick Ferraro",
+  "author": "Jana Sanchez",
   "license": "ISC",
   "dependencies": {
     "hapi": "^7.5.0",
